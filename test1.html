@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2%;
+        min-height: 100dvh;
+      }
+      .box {
+        background-color: #0f0;
+        transition: opacity 0.3s ease;
+        border-radius: 5px;
+      }
+      .box_container {
+        display: grid;
+        grid-template-columns: 200px 200px 200px 200px;
+        grid-template-rows: 200px 200px;
+        gap: 1em;
+        grid-template-areas:
+          "box1 box2 box2 box3"
+          "box1 box4 box5 box5";
+        cursor: pointer;
+      }
+      .box_container:hover .box {
+        opacity: 0.3;
+      }
+      .box_container .box:hover {
+        opacity: 1;
+      }
+      @media (max-width: 56em) {
+        .box_container {
+          display: grid;
+          grid-template-columns: 200px 200px 200px;
+          grid-template-rows: 200px 200px 200px;
+          gap: 1em;
+          grid-template-areas:
+            "box1 box1 box2"
+            "box1 box1 box3"
+            "box4 box5 box5";
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      @media (max-width: 30em) {
+        .box_container {
+          display: grid;
+          grid-template-columns: 200px 200px;
+          grid-template-rows: 200px 200px 200px 200px;
+          gap: 1em;
+          grid-template-areas:
+            "box1 box2"
+            "box1 box3"
+            "box4 box3"
+            "box4 box5";
+          margin: 20px 20px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box_container">
+      <div class="box" style="grid-area: box1">
+        <img src="img/call.png" alt="" />
+      </div>
+      <div class="box" style="grid-area: box2">
+        <img src="img/Fb-logo.png" alt="" />
+      </div>
+      <div class="box" style="grid-area: box3">
+        <img src="img/github.png" alt="" />
+      </div>
+      <div class="box" style="grid-area: box4">
+        <img src="img/gmail.png" alt="" />
+      </div>
+      <div class="box" style="grid-area: box5">
+        <img src="img/telegram-4.png" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
